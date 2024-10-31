@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncover the Mystery – A Quiz Just for You!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, rgba(255, 153, 51, 0.15), rgba(255, 255, 255, 0.15), rgba(19, 136, 8, 0.15));
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question-box {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .question-box input {
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 1em;
+            width: 80%;
+        }
+        .question-box button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+        .hint {
+            margin-top: 10px;
+            color: gray;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uncover the Mystery – A Quiz Just for You!</h1>
+    
+    <div class="question-box">
+        <p><strong>1st Question:</strong> What's Your Favourite Game?</p>
+        <input type="text" id="answer1" placeholder="Your answer...">
+        
+        <p><strong>2nd Question:</strong> Who's Your Best Love?</p>
+        <input type="text" id="answer2" placeholder="Your answer...">
+
+        <button onclick="checkAnswers()">Submit Answers</button>
+
+        <div class="hint">Hint: If you won't get the right answer... Try <i>'Your'</i> Answer...</div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answer1 = document.getElementById("answer1").value.trim().toLowerCase();
+            const answer2 = document.getElementById("answer2").value.trim().toLowerCase();
+
+            // Correct answers
+            const correctAnswer1 = "football";
+            const correctAnswer2 = "krishna";
+
+            if (answer1 === correctAnswer1 && answer2 === correctAnswer2) {
+                // Redirect to the success page if answers are correct
+                window.location.href = "success.html";
+            } else {
+                alert("Incorrect answers. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
